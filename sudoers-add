@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# William Mantly <wmantly@gmail.com>
+# MIT License
+# https://github.com/wmantly/sudoers-add
 
 NEWLINE=$'\n'
 CONTENT=""
