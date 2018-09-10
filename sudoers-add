@@ -57,7 +57,7 @@ if [ $? -eq 0 ]; then
 	if [ -e "/etc/sudoers.d/$FILE_NAME" ]; then
 		rm "/etc/sudoers.d/$FILE_NAME"
 	fi
-	mv "/tmp/$FILE_NAME" '/etc/sudoers.d/$FILE_NAME'
+	mv "/tmp/$FILE_NAME" "/etc/sudoers.d/$FILE_NAME"
 	chmod 0440 "/etc/sudoers.d/$FILE_NAME"
 	exit 0
 else
