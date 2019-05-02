@@ -47,6 +47,7 @@ if [ "$FILE_NAME" == "" ]; then
 	exit 1
 fi
 
+# Read the content of the new suders.d into a temp file so it can be tested.
 touch "/tmp/$FILE_NAME"
 
 echo "$CONTENT" > "/tmp/$FILE_NAME"
@@ -57,7 +58,7 @@ if [ $? -eq 0 ]; then
 	if [ -e "/etc/sudoers.d/$FILE_NAME" ]; then
 		rm "/etc/sudoers.d/$FILE_NAME"
 	fi
-	mv "/tmp/$FILE_NAME" "/etc/sudoers.d/$FILE_NAME"
+	echo "$CONTENT" > "/etc/sudoers.d/$FILE_NAME"
 	chmod 0440 "/etc/sudoers.d/$FILE_NAME"
 	exit 0
 else
